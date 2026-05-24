@@ -31,6 +31,11 @@ export default function Navbar() {
   React.useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
+
+      // Manual check for bottom of page to activate contact link
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 100) {
+        setActiveSection("contact");
+      }
     };
     window.addEventListener("scroll", handleScroll);
 
@@ -43,7 +48,7 @@ export default function Navbar() {
           }
         });
       },
-      { rootMargin: "-20% 0px -60% 0px", threshold: 0 } 
+      { rootMargin: "-10% 0px -40% 0px", threshold: 0 } 
     );
 
     const sections = document.querySelectorAll("section[id]");
@@ -76,8 +81,16 @@ export default function Navbar() {
               const isActive = activeSection === link.href && isHome;
               return (
                 <li key={link.name}>
-                  <Link
-                    href={isHome ? `/#${link.href}` : `/#${link.href}`}
+                  <a
+                    href={`#${link.href}`}
+                    onClick={(e) => {
+                      if (!isHome) return;
+                      e.preventDefault();
+                      const element = document.getElementById(link.href);
+                      if (element) {
+                        element.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }}
                     className={cn(
                       "text-sm font-medium transition-colors relative group",
                       isActive ? "text-primary-500" : "text-foreground/80 hover:text-foreground"
@@ -90,7 +103,7 @@ export default function Navbar() {
                         isActive ? "w-full" : "w-0 group-hover:w-full"
                       )} 
                     />
-                  </Link>
+                  </a>
                 </li>
               );
             })}
@@ -125,16 +138,24 @@ export default function Navbar() {
                 const isActive = activeSection === link.href && isHome;
                 return (
                   <li key={link.name}>
-                    <Link
-                      href={`/#${link.href}`}
-                      onClick={() => setIsOpen(false)}
+                    <a
+                      href={`#${link.href}`}
+                      onClick={(e) => {
+                        setIsOpen(false);
+                        if (!isHome) return;
+                        e.preventDefault();
+                        const element = document.getElementById(link.href);
+                        if (element) {
+                          element.scrollIntoView({ behavior: "smooth" });
+                        }
+                      }}
                       className={cn(
                         "block text-lg font-medium transition-colors",
                         isActive ? "text-primary-500" : "text-foreground/80 hover:text-foreground hover:text-primary-500"
                       )}
                     >
                       {link.name}
-                    </Link>
+                    </a>
                   </li>
                 );
               })}

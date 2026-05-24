@@ -52,7 +52,7 @@ export default function About() {
           >
             <div>
               <h3 className="text-2xl font-outfit font-bold mb-4 text-gradient">
-                I'm MD. Mahmudur Rahman
+                I&apos;m MD. Mahmudur Rahman
               </h3>
               <p className="text-foreground/80 leading-relaxed mb-4">
                 A Physics graduate turned passionate Full Stack Developer. I completed my BSc in Physics, but my love for technology and problem-solving naturally drew me into the world of software development.
@@ -60,7 +60,7 @@ export default function About() {
               <p className="text-foreground/80 leading-relaxed">
                 My programming journey started with a fascination for how things work on the internet. 
                 Today, I enjoy building clean, user-centric interfaces and solving complex logical problems. 
-                When I'm not coding, you can find me exploring new tech trends, reading, or designing UI mockups.
+                When I&apos;m not coding, you can find me exploring new tech trends, reading, or designing UI mockups.
               </p>
             </div>
 

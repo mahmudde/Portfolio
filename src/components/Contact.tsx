@@ -1,13 +1,13 @@
 "use client";
-
+ 
 import * as React from "react";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone, Send } from "lucide-react";
-
+import { Mail, MapPin, Send } from "lucide-react";
+ 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [isSuccess, setIsSuccess] = React.useState(false);
-
+ 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -22,12 +22,12 @@ export default function Contact() {
       setTimeout(() => setIsSuccess(false), 5000);
     }, 1500);
   };
-
+ 
   return (
     <section id="contact" className="py-20 relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[500px] bg-gradient-to-r from-primary-500/10 to-accent-500/10 blur-[100px] -z-10 rounded-full" />
-
+ 
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Side - Text & Info */}
@@ -38,12 +38,12 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl md:text-5xl font-outfit font-bold leading-tight mb-6">
-              Bringing your ideas to life. Let's turn your vision into reality.
+              Bringing your ideas to life. Let&apos;s turn your vision into reality.
             </h2>
             <p className="text-lg text-foreground/70 mb-10">
-              Have a project in mind or just want to chat? Let's connect!
+              Have a project in mind or just want to chat? Let&apos;s connect!
             </p>
-
+ 
             <div className="space-y-6">
               <div className="flex items-center gap-4 group">
                 <div className="w-12 h-12 rounded-full glass-card flex items-center justify-center text-primary-500 group-hover:bg-primary-500 group-hover:text-white transition-all duration-300">
@@ -56,7 +56,7 @@ export default function Contact() {
                   </a>
                 </div>
               </div>
-
+ 
               <div className="flex items-center gap-4 group">
                 <div className="w-12 h-12 rounded-full glass-card flex items-center justify-center text-primary-500 group-hover:bg-primary-500 group-hover:text-white transition-all duration-300">
                   <MapPin className="w-5 h-5" />
@@ -68,7 +68,7 @@ export default function Contact() {
               </div>
             </div>
           </motion.div>
-
+ 
           {/* Right Side - Form */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
@@ -115,7 +115,7 @@ export default function Contact() {
                     placeholder="Hello, I'd like to talk about..."
                   />
                 </div>
-
+ 
                 <button
                   type="submit"
                   disabled={isSubmitting}
@@ -127,14 +127,14 @@ export default function Contact() {
                     <>Send Message <Send className="w-4 h-4" /></>
                   )}
                 </button>
-
+ 
                 {isSuccess && (
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     className="p-4 rounded-xl bg-green-500/10 border border-green-500/20 text-green-500 text-center text-sm font-medium"
                   >
-                    Message sent successfully! I'll get back to you soon.
+                    Message sent successfully! I&apos;ll get back to you soon.
                   </motion.div>
                 )}
               </form>

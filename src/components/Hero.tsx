@@ -32,7 +32,7 @@ export default function Hero() {
           className="flex flex-col gap-6"
         >
           <h1 className="text-5xl md:text-7xl font-outfit font-bold tracking-tight">
-            Hi, I'm <br className="hidden md:block" />
+            Hi, I&apos;m <br className="hidden md:block" />
             MD. Mahmudur Rahman
           </h1>
           <div className="h-8 md:h-10 relative flex items-center w-full">
@@ -57,8 +57,9 @@ export default function Hero() {
 
           <div className="flex flex-wrap items-center gap-4 mt-4">
             <a
-              href="/resume.pdf"
-              download
+              href="https://drive.google.com/file/d/1cZwAkqUn1V9LPD0hTjgNREDAnvDmbm__/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-6 py-3 rounded-full bg-gradient-to-r from-primary-600 to-accent-600 text-white font-medium flex items-center gap-2 hover:scale-105 transition-transform hover-glow"
             >
               Download Resume <Download className="w-4 h-4" />
