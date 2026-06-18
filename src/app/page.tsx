@@ -6,12 +6,10 @@ import Education from "@/components/Education";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
-import InitialScroll from "@/components/InitialScroll";
 
 export default function Home() {
   return (
     <>
-      <InitialScroll />
       <Hero />
       <About />
       <Skills />
