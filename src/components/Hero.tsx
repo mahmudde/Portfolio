@@ -57,7 +57,7 @@ export default function Hero() {
 
           <div className="flex flex-wrap items-center gap-4 mt-4">
             <a
-              href="https://drive.google.com/file/d/1cZwAkqUn1V9LPD0hTjgNREDAnvDmbm__/view?usp=sharing"
+              href="https://drive.google.com/file/d/1ljqPh05_M8Sw9yJaXBWascZYQ9aw7X4n/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 rounded-full bg-gradient-to-r from-primary-600 to-accent-600 text-white font-medium flex items-center gap-2 hover:scale-105 transition-transform hover-glow"
